@@ -4,9 +4,10 @@ public class FavNumbers
 {
     public static void main(String[] args)
     {
+        Scanner in = new Scanner(System.in);
         int favInt = 0;
         double favDouble = 0;
-        Scanner in = new Scanner(System.in);
+
 
         favInt = SafeInput.getInt(in, "Enter your favorite integer");
 

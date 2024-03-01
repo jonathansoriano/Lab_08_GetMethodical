@@ -230,19 +230,36 @@ public class SafeInput
     }
 
     /**
-     *
-     * @param msg
+     * make a unique header with a msg from user in the center of it
+     * @param msg - random message from user that will be centered.
      */
-    public static void prettyHeader(String msg)
-    {
-        for (int x = 1; x <= 60; x++ )
-        {
-            System.out.println("*");
+    public static void prettyHeader(String msg) {
+        int totalLength = 60; // Total length of the header
+        int msgLength = msg.length();
+        int sideLength = (totalLength - msgLength - 6) / 2;
+        // -6 accounts for the three asterisks on each side. Dividing the remaining space by 2 ensures equal amount of padding on both sides of msg
+        // ^This centers the message within the total length of the header
+
+        //top row of asterisks using a loop
+        for (int i = 0; i < totalLength; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+
+        //middle row with the message centered using a loop
+        System.out.print("***");
+        for (int i = 0; i < sideLength; i++) {
+            System.out.print(" ");
+        }
+        System.out.print(msg);
+        for (int i = 0; i < sideLength; i++) {
+            System.out.print(" ");
+        }
+        System.out.println("***");
+
+        //bottom row of asterisks using a loop
+        for (int i = 0; i < totalLength; i++) {
+            System.out.print("*");
         }
     }
-
-
-
-
-
 }
